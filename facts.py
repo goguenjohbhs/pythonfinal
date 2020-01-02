@@ -1,5 +1,13 @@
 #!/usr/bin/env python3
 
+from sportsreference.nfl.teams import Teams
+from sportsreference.nfl.schedule import Schedule
+
+def list_team_names(my_year):
+
+    allTeams = Teams(year=my_year)
+    for team in allTeams:
+        print("%-22s %-3s" % (team.name, team.abbreviation))
 
 def run_facts():
     year=""
@@ -11,7 +19,7 @@ def run_facts():
         if  (cmd=="") or (cmd=="q") or (cmd=="quit") or (cmd=="stop"):
             break
         elif (cmd=="l") or (cmd=="list"):
-            print("not yet done")
+             list_team_names(year)
         elif (cmd=="t") or (cmd=="team"):
             print("not yet done")
         elif (cmd=="r") or (cmd=="results"):
