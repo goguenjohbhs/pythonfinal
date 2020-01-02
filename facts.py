@@ -25,7 +25,8 @@ def run_facts():
         elif (cmd=="r") or (cmd=="results"):
             print("not yet done")
         elif (cmd=="y") or (cmd=="year"):
-            print("not yet done")
+            year = input("year : ")
+
 
 if __name__ == '__main__':
      run_facts()
