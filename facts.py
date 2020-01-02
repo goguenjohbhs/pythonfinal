@@ -5,7 +5,12 @@ from sportsreference.nfl.schedule import Schedule
 
 def list_team_names(my_year):
 
-    allTeams = Teams(year=my_year)
+    try:
+        allTeams = Teams(year=my_year)
+    except:
+        print ("No data for Year %s" % my_year)
+        return
+        
     for team in allTeams:
         print("%-22s %-3s" % (team.name, team.abbreviation))
 
