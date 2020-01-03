@@ -44,7 +44,16 @@ def display_results(my_year):
     for team in allTeams:
         abbrevName2Name[team.abbreviation] = team.name
 
-     
+    while 1:
+        name = input("Team Name (l/list/q/quit/stop): ")
+        name = name.upper()
+
+        if (name== "") or (name== "Q") or (name== "QUIT") or (name== "STOP"):
+            break
+        if (name== "L") or (name=="LIST"):
+            list_team_names(my_year)
+            continue
+
 
 
 def run_facts():
