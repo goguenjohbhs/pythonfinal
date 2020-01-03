@@ -3,6 +3,7 @@
 from sportsreference.nfl.teams import Teams
 from sportsreference.nfl.schedule import Schedule
 
+
 def list_team_names(my_year):
 
     try:
@@ -34,6 +35,17 @@ def display_teams(my_year):
          team.points_difference))
 
 
+def display_results(my_year):
+    abbrevName2Name = {}
+
+    # games returned have opponents listed w/abbrev name
+    # walk through all the teams, saving a dictionary of abbrev name to actual team name
+    allTeams = Teams(year=my_year)
+    for team in allTeams:
+        abbrevName2Name[team.abbreviation] = team.name
+
+     
+
 
 def run_facts():
     year=""
@@ -49,7 +61,7 @@ def run_facts():
         elif (cmd=="t") or (cmd=="team"):
              display_teams(year)
         elif (cmd=="r") or (cmd=="results"):
-            print("not yet done")
+             display_results(year)
         elif (cmd=="y") or (cmd=="year"):
             year = input("year : ")
 
