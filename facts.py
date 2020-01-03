@@ -10,9 +10,30 @@ def list_team_names(my_year):
     except:
         print ("No data for Year %s" % my_year)
         return
-        
+
     for team in allTeams:
         print("%-22s %-3s" % (team.name, team.abbreviation))
+
+def display_teams(my_year):
+    try:
+        allTeams = Teams(year=my_year)
+    except:
+        print ("No data for Year %s" % my_year)
+        return
+
+    sortedTeams = sorted(allTeams, key=lambda team: team.wins)
+
+    for team in sortedTeams:
+        print("%-20s %-11s Won: %2d Lost: %2d pts+: %-3d pts-: %-3d ptdiff: %-4d" %
+        (team.name,
+         team.abbreviation,
+         team.wins,
+         team.losses,
+         team.points_for,
+         team.points_against,
+         team.points_difference))
+
+
 
 def run_facts():
     year=""
@@ -26,7 +47,7 @@ def run_facts():
         elif (cmd=="l") or (cmd=="list"):
              list_team_names(year)
         elif (cmd=="t") or (cmd=="team"):
-            print("not yet done")
+             display_teams(year)
         elif (cmd=="r") or (cmd=="results"):
             print("not yet done")
         elif (cmd=="y") or (cmd=="year"):
