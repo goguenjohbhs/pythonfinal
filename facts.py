@@ -121,7 +121,7 @@ def display_players(my_year):
             continue
 
         for player in roster.players:
-            print("Name: %-30s" % player.name)
+            print("Name: %-30s Weight: %-4s Height: %-3s" % (player.name, player.weight, player.height))
 
 
 
