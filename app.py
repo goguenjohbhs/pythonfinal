@@ -3,7 +3,7 @@ import facts
 import trivia
 
 def main ():
-
+#def of main means run whatever is below a while statment is a loop which means true and runs forever
     while 1:
         cmd = input ("(f/facts) (t/trivia) (q/quit/stop): ")
         cmd = cmd.lower()

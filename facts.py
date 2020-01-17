@@ -5,7 +5,7 @@ from sportsreference.nfl.schedule import Schedule
 from sportsreference.nfl.roster import Roster
 
 def list_team_names(my_year):
-
+# if you give an unknown year or team it will go to the except block which prints out no data for that year then return to the main page in this code
     try:
         allTeams = Teams(year=my_year)
     except:
